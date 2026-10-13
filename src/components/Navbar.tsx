@@ -89,39 +89,30 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 bg-[#1a1a1a] flex flex-col justify-center px-10 transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#1a1a1a] flex flex-col justify-between px-8 pt-28 pb-10 transition-all duration-300 lg:hidden overflow-y-auto ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="mb-12 flex items-center gap-3.5">
-          <img
-            src="/images/logo-icon.png"
-            alt="Mittal Apparels Logo"
-            className="h-12 w-auto object-contain shrink-0"
-          />
-          <div>
-            <div className="font-display text-2xl font-semibold tracking-[0.15em] text-white">MITTAL APPARELS</div>
-            <div className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mt-1">Fabric to Fashion</div>
-          </div>
-        </div>
-        <nav className="flex flex-col gap-6">
+        <nav className="flex flex-col gap-6 my-auto">
           {navLinks.map((link, i) => (
             <button
               key={link.href}
               onClick={() => handleNav(link.href)}
-              className="font-display text-3xl font-light text-white/80 hover:text-white text-left transition-colors duration-200"
-              style={{ transitionDelay: `${i * 40}ms` }}
+              className="font-display text-2xl sm:text-3xl font-light text-white/80 hover:text-white text-left transition-colors duration-200"
+              style={{ transitionDelay: `${i * 30}ms` }}
             >
               {link.label}
             </button>
           ))}
         </nav>
-        <button
-          onClick={() => handleNav('#contact')}
-          className="mt-12 self-start font-body text-xs tracking-[0.15em] uppercase border border-white/40 text-white px-6 py-3 hover:bg-white hover:text-[#1a1a1a] transition-all duration-300"
-        >
-          Get In Touch
-        </button>
+        <div className="pt-8 border-t border-[#2d2d2d] mt-6">
+          <button
+            onClick={() => handleNav('#contact')}
+            className="w-full font-body text-xs tracking-[0.15em] uppercase border border-white/60 text-white py-3.5 hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 text-center"
+          >
+            Get In Touch
+          </button>
+        </div>
       </div>
     </>
   );
