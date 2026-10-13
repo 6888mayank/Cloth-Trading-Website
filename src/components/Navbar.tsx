@@ -30,14 +30,12 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm border-b border-[#e8e0d4]'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#1a1a1a] border-b border-[#2d2d2d] ${
+          scrolled ? 'shadow-lg py-3' : 'py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-18 py-4">
+          <div className="flex items-center justify-between h-18">
             {/* Logo */}
             <button
               onClick={() => handleNav('#home')}
@@ -49,18 +47,10 @@ export default function Navbar() {
                 className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 shrink-0"
               />
               <div className="flex flex-col">
-                <span
-                  className={`font-display text-xl font-semibold tracking-[0.15em] transition-colors duration-300 ${
-                    scrolled ? 'text-[#1a1a1a]' : 'text-white'
-                  }`}
-                >
+                <span className="font-display text-xl font-semibold tracking-[0.15em] text-white">
                   MITTAL APPARELS
                 </span>
-                <span
-                  className={`font-body text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 mt-0.5 ${
-                    scrolled ? 'text-[#8a7a62]' : 'text-white/70'
-                  }`}
-                >
+                <span className="font-body text-[10px] tracking-[0.3em] uppercase text-[#c4b99a] mt-0.5">
                   Fabric to Fashion
                 </span>
               </div>
@@ -72,20 +62,14 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNav(link.href)}
-                  className={`font-body text-xs tracking-[0.12em] uppercase transition-colors duration-300 hover:opacity-60 ${
-                    scrolled ? 'text-[#1a1a1a]' : 'text-white'
-                  }`}
+                  className="font-body text-xs tracking-[0.12em] uppercase text-white/80 hover:text-white transition-colors duration-200"
                 >
                   {link.label}
                 </button>
               ))}
               <button
                 onClick={() => handleNav('#contact')}
-                className={`font-body text-xs tracking-[0.12em] uppercase px-5 py-2.5 border transition-all duration-300 ${
-                  scrolled
-                    ? 'border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white'
-                    : 'border-white text-white hover:bg-white hover:text-[#1a1a1a]'
-                }`}
+                className="font-body text-xs tracking-[0.12em] uppercase px-5 py-2.5 border border-white/60 text-white hover:bg-white hover:text-[#1a1a1a] transition-all duration-300"
               >
                 Get In Touch
               </button>
@@ -93,7 +77,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className={`lg:hidden transition-colors duration-300 ${scrolled ? 'text-[#1a1a1a]' : 'text-white'}`}
+              className="lg:hidden text-white transition-colors duration-300"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
