@@ -23,11 +23,20 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-16 border-b border-[#2d2d2d]">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="font-display text-2xl font-semibold tracking-[0.15em] text-white mb-1">
-              MITTAL APPARELS
-            </div>
-            <div className="font-body text-xs tracking-[0.3em] uppercase text-[#8a7a62] mb-5">
-              Fabric to Fashion
+            <div className="flex items-center gap-3.5 mb-4">
+              <img
+                src="/images/logo-icon.png"
+                alt="Mittal Apparels Logo"
+                className="h-12 w-auto object-contain shrink-0"
+              />
+              <div>
+                <div className="font-display text-2xl font-semibold tracking-[0.15em] text-white">
+                  MITTAL APPARELS
+                </div>
+                <div className="font-body text-[10px] tracking-[0.3em] uppercase text-[#8a7a62]">
+                  Fabric to Fashion
+                </div>
+              </div>
             </div>
             <p className="font-body text-sm text-[#666] leading-[1.8] max-w-xs font-light">
               Professional garment manufacturing focused on shirts, trousers and cordsets.

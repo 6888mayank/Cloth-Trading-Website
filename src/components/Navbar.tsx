@@ -41,22 +41,29 @@ export default function Navbar() {
             {/* Logo */}
             <button
               onClick={() => handleNav('#home')}
-              className="flex flex-col leading-none group"
+              className="flex items-center gap-3.5 leading-none group text-left"
             >
-              <span
-                className={`font-display text-xl font-semibold tracking-[0.15em] transition-colors duration-300 ${
-                  scrolled ? 'text-[#1a1a1a]' : 'text-white'
-                }`}
-              >
-                MITTAL APPARELS
-              </span>
-              <span
-                className={`font-body text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 mt-0.5 ${
-                  scrolled ? 'text-[#8a7a62]' : 'text-white/70'
-                }`}
-              >
-                Fabric to Fashion
-              </span>
+              <img
+                src="/images/logo-icon.png"
+                alt="Mittal Apparels Logo"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 shrink-0"
+              />
+              <div className="flex flex-col">
+                <span
+                  className={`font-display text-xl font-semibold tracking-[0.15em] transition-colors duration-300 ${
+                    scrolled ? 'text-[#1a1a1a]' : 'text-white'
+                  }`}
+                >
+                  MITTAL APPARELS
+                </span>
+                <span
+                  className={`font-body text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 mt-0.5 ${
+                    scrolled ? 'text-[#8a7a62]' : 'text-white/70'
+                  }`}
+                >
+                  Fabric to Fashion
+                </span>
+              </div>
             </button>
 
             {/* Desktop nav */}
@@ -102,9 +109,16 @@ export default function Navbar() {
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="mb-12">
-          <div className="font-display text-2xl font-semibold tracking-[0.15em] text-white">MITTAL APPARELS</div>
-          <div className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mt-1">Fabric to Fashion</div>
+        <div className="mb-12 flex items-center gap-3.5">
+          <img
+            src="/images/logo-icon.png"
+            alt="Mittal Apparels Logo"
+            className="h-12 w-auto object-contain shrink-0"
+          />
+          <div>
+            <div className="font-display text-2xl font-semibold tracking-[0.15em] text-white">MITTAL APPARELS</div>
+            <div className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mt-1">Fabric to Fashion</div>
+          </div>
         </div>
         <nav className="flex flex-col gap-6">
           {navLinks.map((link, i) => (
