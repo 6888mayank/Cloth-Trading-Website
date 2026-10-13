@@ -59,13 +59,6 @@ export default function Products() {
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center gap-2 border border-white px-5 py-3">
-                    <span className="font-body text-xs tracking-[0.2em] uppercase text-white">Explore Product</span>
-                    <ArrowUpRight size={14} className="text-white" />
-                  </div>
-                </div>
                 {/* Tag */}
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1">
                   <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#8a7a62]">{product.tag}</span>
